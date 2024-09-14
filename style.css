@@ -1,0 +1,352 @@
+/* Reset default margin, padding, and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* General body styles */
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Main container styling */
+.main {
+  background: #16356A;
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Navbar styling */
+.navbar {
+  background: transparent;
+  color: #f1f3f5;
+  padding: 10px;
+  text-align: center;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo animation styles */
+#nav-name {
+  font-size: 20px;
+  padding: 5px;
+  opacity: 0;
+  display: inline-block;
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Navbar links styling */
+#links {
+  display: flex;
+  padding: 8px;
+  list-style: none;
+}
+
+#links li {
+  padding-left: 10px;
+}
+
+#links li:hover {
+  background-color: #9fbae8;
+  border-radius: 5px;
+  color: #333;
+}
+
+#links a {
+  text-decoration: none;
+  color: #f1f3f5;
+  padding: 8px;
+  font-weight: 700;
+}
+
+/* Hero section styling */
+.hero {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.hero::before {
+  content: "";
+  background-image: url(./assests/hero-background.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  filter: blur(3.5px);
+  -webkit-filter: blur(3.5px);
+  z-index: 1;
+}
+
+/* Foreground image styling */
+.profile-image {
+  position: relative;
+  z-index: 2;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  top: 10%;
+  outline: 5px solid #f1f3f5;
+  transition: transform 2s ease;
+}
+
+.profile-image:hover {
+  transform: rotate(360deg);
+}
+
+/* Hero content styling */
+.hero-content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  color: #f1f3f5;
+  font-weight: 900;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.hero-content .icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hero-content .icons i {
+  font-size: 1.4rem;
+  color: #f1f3f5;
+  line-height: 2;
+}
+
+.hero-content .icons i:hover {
+  color: #9fbae8;
+  cursor: pointer;
+}
+
+/* Main content section styling */
+.section {
+  background: #f1f3f5;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+.section-title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+.section-content {
+  color: #666;
+  font-size: 16px;
+}
+
+.experience-item {
+  margin-bottom: 20px;
+}
+
+.dates {
+  font-style: italic;
+  color: #888;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Toggle button styling */
+#toggle-button {
+  display: block;
+  margin-top: 10px;
+  margin-left: 30vw;
+  padding: 8px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #748eba;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 4px;
+}
+
+#toggle-button:hover {
+  background-color: #568ce8dd;
+  color: #f4f4f4;
+}
+
+/* Hidden class for toggling visibility */
+.hidden {
+  display: none;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 750px) {
+  #links {
+    display: none;
+  }
+
+  #name {
+    font-size: 18px;
+  }
+
+  #links.show {
+    display: flex;
+  }
+
+  #links li {
+    padding: 10px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+    color: #16356A;
+  }
+
+  .hero-content .icons i {
+    color: #16356aa0;
+    font-size: 1.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  #toggle-button {
+    margin-left: 20vw;
+  }
+
+  .hero::before {
+    background-size: cover;
+  }
+}
+
+/* General form styles */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+form h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #1a2980;
+  /* Border color on focus */
+  outline: none;
+  background-color: #fff;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #26d0ce;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1a2980;
+}
+
+/* Responsive layout for form */
+@media screen and (max-width: 780px) {
+  form {
+    padding: 15px;
+  }
+
+  form input,
+  form textarea,
+  form button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  form h2 {
+    font-size: 20px;
+  }
+
+}
